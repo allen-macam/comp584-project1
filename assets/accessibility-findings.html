@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accessibility and Email Design Findings</title>
+  <style>
+    @page { margin: 0.65in; }
+    body { color: #202333; font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.45; }
+    h1 { color: #2424a8; font-family: Georgia, serif; font-size: 28pt; margin: 0 0 6pt; }
+    h2 { color: #2424a8; font-size: 16pt; margin: 20pt 0 6pt; }
+    h3 { color: #333333; font-size: 12pt; margin: 12pt 0 4pt; }
+    .meta { color: #666666; margin: 0 0 18pt; }
+    .callout { background: #eef0ff; border-left: 4px solid #2424a8; padding: 9pt 12pt; }
+    .columns { display: flex; gap: 20pt; }
+    .columns > section { flex: 1; }
+    img { border: 1px solid #d0d4dc; display: block; max-width: 100%; }
+    .caption { color: #666666; font-size: 9pt; margin-top: 4pt; }
+    li { margin-bottom: 4pt; }
+    .page-break { break-before: page; }
+    code { background: #f1f2f4; padding: 1pt 3pt; }
+  </style>
+</head>
+<body>
+  <h1>Accessibility and Email Design Findings</h1>
+  <p class="meta">The Nocking Point email homework | September 2026</p>
+
+  <div class="callout">
+    <strong>Implementation summary:</strong> The email uses one centered, single-column table inside a full-width outer table. The inner table is fixed at the recommended 600px desktop width and contracts to 100% on small screens.
+  </div>
+
+  <h2>Button approaches explored</h2>
+  <div class="columns">
+    <section>
+      <h3>Inline text link</h3>
+      <p><strong>Pros:</strong> simplest markup, works in nearly every email client, and degrades cleanly.</p>
+      <p><strong>Cons:</strong> small click target, lower visual prominence, and less obvious as the primary action.</p>
+    </section>
+    <section>
+      <h3>Styled anchor button (chosen)</h3>
+      <p><strong>Pros:</strong> familiar action shape, centered alignment, high contrast, and generous 15px by 30px padding for easier tapping.</p>
+      <p><strong>Cons:</strong> some older clients can remove CSS styling, so the link still needs meaningful text and a useful destination.</p>
+    </section>
+  </div>
+
+  <h2>Accessibility checks</h2>
+  <ul>
+    <li>The document has <code>lang="en"</code>, a descriptive page title, and a viewport meta tag.</li>
+    <li>The browser accessibility tree exposes one level-one heading, followed by level-two and level-three headings in order.</li>
+    <li>The hero image has descriptive alternative text: “Archer aiming a blue recurve bow.”</li>
+    <li>The primary action is exposed as a named button, “Improve Your Shot,” with a 48px rendered height.</li>
+    <li>The unsubscribe control is a real link with underlined text, rather than text that only looks clickable.</li>
+    <li>GitHub’s homepage was also inspected with the same browser accessibility tools. It exposed named navigation, headings, links, buttons, and footnote relationships.</li>
+  </ul>
+
+  <h2>Responsive and email findings</h2>
+  <ul>
+    <li>At 1280px viewport width, the inner email table measured 600px and remained centered.</li>
+    <li>At 390px viewport width, the inner table measured 355.2px and the hero image measured 355.2px, preventing horizontal overflow.</li>
+    <li>The hero image uses <code>width: 100%</code> with a 600px maximum and automatic height.</li>
+    <li>The practice tip adds a background image behind readable text with a dark overlay for contrast.</li>
+    <li>The supplied course-example URL returned a 404 during testing, so it was not used as an accessibility comparison.</li>
+  </ul>
+
+  <div class="page-break"></div>
+  <h2>Screenshots</h2>
+  <h3>Desktop render</h3>
+  <img src="email-desktop.png" alt="Desktop screenshot of The Nocking Point email">
+  <p class="caption">1280px viewport; the fixed 600px inner table is centered.</p>
+
+  <h3>Mobile render</h3>
+  <img src="email-mobile.png" alt="Mobile screenshot of The Nocking Point email">
+  <p class="caption">390px viewport; the table and hero image contract to the available width.</p>
+</body>
+</html>
