@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>The Nocking Point | September 2026</title>
+		<title>The Nocking Point | November 2026</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,23 +12,49 @@
 			table { border-collapse: collapse !important; }
 			body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
 			a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
+			.email-container { width: 600px; max-width: 600px; }
+			.column { vertical-align: top; }
+			.link:hover, .link:focus { text-decoration: underline !important; }
+			.cta:hover, .cta:focus { background-color: #11176d !important; }
+			.cta-arrow { display: inline-block; animation: arrow-nudge 0.8s ease-in-out infinite alternate; }
+			@keyframes arrow-nudge {
+				from { transform: translateX(0); }
+				to { transform: translateX(5px); }
+			}
 			@media screen and (max-width: 600px) {
 				.email-container { width: 100% !important; }
 				.mobile-padding { padding-left: 22px !important; padding-right: 22px !important; }
 				.hero-image { width: 100% !important; height: auto !important; }
+				.stack-row { display: block !important; width: 100% !important; }
+				.stack-column { box-sizing: border-box !important; display: block !important; width: 100% !important; max-width: 100% !important; }
+				.stack-gap { height: 12px !important; line-height: 12px !important; }
 				h1 { font-size: 34px !important; }
+				.body-copy { font-size: 16px !important; }
+				.section-heading { font-size: 24px !important; }
 			}
+			@media (prefers-reduced-motion: reduce) {
+				.cta-arrow { animation: none !important; }
+			}
+			#checklist-toggle:not(:checked) ~ .checklist-details { max-height: 0 !important; overflow: hidden !important; }
+			#range-indoor:checked ~ .range-panels .range-outdoor,
+			#range-indoor:checked ~ .range-panels .range-home,
+			#range-outdoor:checked ~ .range-panels .range-indoor,
+			#range-outdoor:checked ~ .range-panels .range-home,
+			#range-home:checked ~ .range-panels .range-indoor,
+			#range-home:checked ~ .range-panels .range-outdoor { display: none !important; }
+			#range-indoor:checked ~ .range-options label[for="range-indoor"],
+			#range-outdoor:checked ~ .range-options label[for="range-outdoor"],
+			#range-home:checked ~ .range-options label[for="range-home"] { background-color: #2424a8 !important; color: #ffffff !important; }
 		</style>
 	</head>
 	<body id="body" style="margin: 0; padding: 0; background-color: #e8edf2;">
-		<!-- The recommended inner fixed width for email is 600px. -->
 		<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; background-color: #e8edf2;">
 			<tr>
 				<td align="center" style="padding: 24px 10px;">
 					<table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width: 600px; max-width: 600px; background-color: #ffffff;">
 						<tr>
 							<td style="padding: 14px 25px; background-color: #2424a8; color: #ffffff; text-align: right; font-family: Arial, sans-serif; font-size: 13px;">
-								Issue #1 | September 2026
+								Issue #1 | November 2026
 							</td>
 						</tr>
 						<tr>
@@ -44,33 +70,109 @@
 						</tr>
 						<tr>
 							<td class="mobile-padding" style="padding: 30px 35px 10px; background-color: #ffffff; font-family: Arial, sans-serif; color: #333333;">
-								<h2 style="margin: 0 0 15px; color: #2424a8; font-family: Georgia, serif; font-size: 26px; line-height: 1.2; text-align: center;">Find Your Focus</h2>
-								<p style="margin: 0 0 15px; font-size: 15px; line-height: 1.7;">Every great shot begins with patience, practice, and a steady breath.</p>
-								<p style="margin: 0; font-size: 15px; line-height: 1.7;">Whether you are stepping onto the range for the first time or preparing for your next competition, a focused routine helps you find the center.</p>
+								<h2 class="section-heading" style="margin: 0 0 15px; color: #2424a8; font-family: Georgia, serif; font-size: 26px; line-height: 1.2; text-align: center;">Find Your Focus</h2>
+								<p class="body-copy" style="margin: 0 0 15px; font-size: 15px; line-height: 1.7;">Every great shot begins with patience, practice, and a steady breath.</p>
+								<p class="body-copy" style="margin: 0; font-size: 15px; line-height: 1.7;">Whether you are stepping onto the range for the first time or preparing for your next competition, a focused routine helps you find the center.</p>
 							</td>
 						</tr>
 						<tr>
-							<td class="mobile-padding" style="padding: 20px 35px; background-color: #ffffff;">
-								<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #20285a; background-image: url('images/archery.jpg'); background-size: cover; background-position: center;">
-									<tr>
-										<td style="padding: 20px; background-color: rgba(20, 26, 70, 0.88); border-left: 4px solid #f5c451;">
-											<h3 style="margin: 0 0 8px; color: #ffffff; font-family: Georgia, serif; font-size: 18px; line-height: 1.2;">Practice tip</h3>
-											<p style="margin: 0; color: #ffffff; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;">Take three slow breaths before drawing your bow. A calm mind helps create a consistent shot.</p>
+							<td class="mobile-padding" style="padding: 25px 35px 8px; background-color: #ffffff;">
+								<h2 class="section-heading" style="margin: 0 0 14px; color: #2424a8; font-family: Georgia, serif; font-size: 23px; line-height: 1.2;">Build a better practice</h2>
+								<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+									<tr class="stack-row">
+										<td class="column stack-column" width="50%" style="width: 50%; padding: 16px; background-color: #f0f1ff; font-family: Arial, sans-serif; color: #333333;">
+											<div>
+												<h3 style="margin: 0 0 8px; color: #2424a8; font-family: Georgia, serif; font-size: 18px;">01 &nbsp; Set your stance</h3>
+												<p class="body-copy" style="margin: 0; font-size: 14px; line-height: 1.6;">Place your feet shoulder-width apart and find a balanced, repeatable position before you nock an arrow.</p>
+											</div>
+										</td>
+										<td class="stack-gap" height="0" style="height: 0; line-height: 0; font-size: 0;">&nbsp;</td>
+										<td class="column stack-column" width="50%" style="width: 50%; padding: 16px; background-color: #f7f5eb; font-family: Arial, sans-serif; color: #333333;">
+											<div>
+												<h3 style="margin: 0 0 8px; color: #2424a8; font-family: Georgia, serif; font-size: 18px;">02 &nbsp; Follow through</h3>
+												<p class="body-copy" style="margin: 0; font-size: 14px; line-height: 1.6;">Keep your bow arm steady after release. A relaxed finish helps every shot feel more consistent.</p>
+											</div>
 										</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
+							<td class="mobile-padding" style="padding: 24px 35px 8px; background-color: #ffffff;">
+								<h2 class="section-heading" style="margin: 0 0 14px; color: #2424a8; font-family: Georgia, serif; font-size: 23px; line-height: 1.2;">The range-roundup</h2>
+								<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+									<tr class="stack-row">
+										<td class="column stack-column" width="33.33%" style="width: 33.33%; padding: 14px 12px; background-color: #20285a; color: #ffffff; font-family: Arial, sans-serif;">
+											<div>
+												<h3 style="margin: 0 0 7px; color: #f5c451; font-family: Georgia, serif; font-size: 16px;">On the calendar</h3>
+												<p class="body-copy" style="margin: 0; font-size: 13px; line-height: 1.55;">Find a local club open day and meet your archery community.</p>
+											</div>
+										</td>
+										<td class="stack-gap" height="0" style="height: 0; line-height: 0; font-size: 0;">&nbsp;</td>
+										<td class="column stack-column" width="33.33%" style="width: 33.33%; padding: 14px 12px; background-color: #303b79; color: #ffffff; font-family: Arial, sans-serif;">
+											<div>
+												<h3 style="margin: 0 0 7px; color: #f5c451; font-family: Georgia, serif; font-size: 16px;">Gear check</h3>
+												<p class="body-copy" style="margin: 0; font-size: 13px; line-height: 1.55;">Inspect your string, nocks, and armguard before each session.</p>
+											</div>
+										</td>
+										<td class="stack-gap" height="0" style="height: 0; line-height: 0; font-size: 0;">&nbsp;</td>
+										<td class="column stack-column" width="33.33%" style="width: 33.33%; padding: 14px 12px; background-color: #414d91; color: #ffffff; font-family: Arial, sans-serif;">
+											<div>
+												<h3 style="margin: 0 0 7px; color: #f5c451; font-family: Georgia, serif; font-size: 16px;">Reset &amp; recover</h3>
+												<p class="body-copy" style="margin: 0; font-size: 13px; line-height: 1.55;">Take a short break, hydrate, and stretch between ends.</p>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="mobile-padding" style="padding: 24px 35px 8px; background-color: #ffffff; font-family: Arial, sans-serif; color: #333333;">
+								<div style="padding: 18px; border: 1px solid #d9dced; border-radius: 4px;">
+									<input type="checkbox" id="checklist-toggle" checked="checked" style="width: 18px; height: 18px; vertical-align: middle;" />
+									<label for="checklist-toggle" style="color: #2424a8; font-size: 15px; font-weight: bold; cursor: pointer;">Tap to show or hide your three-step range checklist</label>
+									<div class="checklist-details" style="max-height: 300px; overflow: hidden; transition: max-height 0.35s ease;">
+										<ul style="margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.8;">
+											<li>Check the range is clear and safe.</li>
+											<li>Inspect your equipment before shooting.</li>
+											<li>Warm up, then take your time between ends.</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="mobile-padding" style="padding: 20px 35px; background-color: #ffffff; font-family: Arial, sans-serif; color: #333333;">
+								<div style="padding: 18px; background-color: #f5f6fa;">
+									<h2 style="margin: 0 0 8px; color: #2424a8; font-family: Georgia, serif; font-size: 20px;">Pick your next session</h2>
+									<p style="margin: 0 0 12px; font-size: 14px; line-height: 1.6;">Choose a setting to see a small idea for your next practice.</p>
+									<input type="radio" id="range-indoor" name="range-choice" checked="checked" />
+									<input type="radio" id="range-outdoor" name="range-choice" />
+									<input type="radio" id="range-home" name="range-choice" />
+									<div class="range-options" style="margin-bottom: 12px;">
+										<label for="range-indoor" style="display: inline-block; margin: 0 5px 5px 0; padding: 8px 10px; border: 1px solid #2424a8; border-radius: 3px; color: #2424a8; font-size: 13px; cursor: pointer;">Indoor</label>
+										<label for="range-outdoor" style="display: inline-block; margin: 0 5px 5px 0; padding: 8px 10px; border: 1px solid #2424a8; border-radius: 3px; color: #2424a8; font-size: 13px; cursor: pointer;">Outdoor</label>
+										<label for="range-home" style="display: inline-block; margin: 0 5px 5px 0; padding: 8px 10px; border: 1px solid #2424a8; border-radius: 3px; color: #2424a8; font-size: 13px; cursor: pointer;">At home</label>
+									</div>
+									<div class="range-panels">
+										<div class="range-indoor" style="padding: 12px; background-color: #ffffff; font-size: 14px; line-height: 1.6;">Indoor idea: shoot a short end at close range and focus on a relaxed release.</div>
+										<div class="range-outdoor" style="padding: 12px; background-color: #ffffff; font-size: 14px; line-height: 1.6;">Outdoor idea: use a consistent pre-shot routine and note the wind before each end.</div>
+										<div class="range-home" style="padding: 12px; background-color: #ffffff; font-size: 14px; line-height: 1.6;">At-home idea: rehearse your stance and breathing without drawing or releasing an arrow.</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
 							<td align="center" style="padding: 10px 25px 35px; background-color: #ffffff;">
-								<a href="#" role="button" style="display: inline-block; padding: 15px 30px; background-color: #2424a8; border-radius: 4px; color: #ffffff; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; line-height: 1.2; text-align: center; text-decoration: none;">Improve Your Shot</a>
+								<a class="cta" href="https://www.worldarchery.sport/" target="_blank" style="display: inline-block; padding: 15px 25px; background-color: #2424a8; border-radius: 4px; color: #ffffff; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; line-height: 1.2; text-align: center; text-decoration: none;">Explore World Archery &nbsp;<span class="cta-arrow" aria-hidden="true">&rarr;</span></a>
+								<p style="margin: 12px 0 0; color: #666666; font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">More training resources at <a class="link" href="https://www.worldarchery.sport/" target="_blank" style="color: #2424a8; text-decoration: underline;">worldarchery.sport</a>.</p>
 							</td>
 						</tr>
 						<tr>
 							<td align="center" style="padding: 25px; background-color: #111111; color: #ffffff; font-family: Arial, sans-serif; font-size: 12px; line-height: 1.5;">
 								<p style="margin: 0 0 8px;">The Nocking Point</p>
 								<p style="margin: 0;">Copyright 2026 The Nocking Point</p>
-								<p style="margin: 10px 0 0;"><a href="#" style="color: #ffffff; text-decoration: underline;">Unsubscribe</a></p>
+								<p style="margin: 10px 0 0;"><a class="link" href="mailto:unsubscribe@nockingpoint.example?subject=Unsubscribe" style="color: #ffffff; text-decoration: underline;">Unsubscribe</a></p>
 							</td>
 						</tr>
 					</table>
